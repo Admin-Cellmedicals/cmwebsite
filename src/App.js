@@ -1,23 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+
+// Estilos CSS directamente en el archivo para que sea más fácil de manejar.
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100vh',
+    backgroundColor: '#f8f9fa',
+    fontFamily: 'Arial, sans-serif',
+    textAlign: 'center',
+    color: '#343a40',
+    padding: '20px',
+  },
+  icon: {
+    fontSize: '60px',
+    marginBottom: '20px',
+  },
+  title: {
+    fontSize: '2.5em',
+    margin: '0 0 10px 0',
+  },
+  subtitle: {
+    fontSize: '1.2em',
+    color: '#6c757d',
+    marginBottom: '25px',
+  },
+  contact: {
+    fontSize: '1em',
+    color: '#495057',
+  },
+  emailLink: {
+    color: '#007bff',
+    textDecoration: 'none',
+    fontWeight: 'bold',
+  }
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={styles.container}>
+      <div style={styles.icon}>🚧</div>
+      <h1 style={styles.title}>Sitio en Construcción</h1>
+      <p style={styles.subtitle}>
+        Estamos trabajando para traer una nueva experiencia de salud y bienestar natural.
+      </p>
+      <p style={styles.contact}>
+        Para consultas, puedes contactarnos en: <a href="mailto:contacto@cellmedicals.com" style={styles.emailLink}>contacto@cellmedicals.com</a>
+      </p>
     </div>
   );
 }
