@@ -64,7 +64,7 @@ const Contacto = () => (
                     width: '100%',
                     height: '300px',
                     objectFit: 'cover',
-                    display: 'block' // <-- ¡ESTA LÍNEA SOLUCIONA EL PROBLEMA!
+                    display: 'block' // Soluciona la barra blanca inferior
                 }}
             />
         </div>
@@ -94,12 +94,11 @@ const Contacto = () => (
                        color: '#4A7C59', 
                        fontWeight: 'bold', 
                        textDecoration: 'none',
-                       display: 'flex', 
+                       display: 'inline-flex', // CORREGIDO: Usamos solo inline-flex para centrar contenido
                        alignItems: 'center', 
                        justifyContent: 'center', 
                        gap: '10px',
-                       transition: 'transform 0.2s',
-                       display: 'inline-flex'
+                       transition: 'transform 0.2s'
                    }}
                    onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
                    onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
