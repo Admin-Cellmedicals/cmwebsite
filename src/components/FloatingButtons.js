@@ -3,7 +3,7 @@ import React from 'react';
 const FloatingButtons = () => {
   // --- TUS DATOS ---
   // RECUERDA: Cambia estos datos por los reales de tu cliente antes de entregar
-  const whatsappNumber = "56912345678"; 
+  const whatsappNumber = "59168922341"; 
   const instagramUser = "cellmedicals"; 
   const mensajeDefault = "Hola, me gustaría más información sobre las terapias.";
 
