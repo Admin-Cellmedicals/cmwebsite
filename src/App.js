@@ -4,9 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Importamos el menú de navegación
 import Navbar from './components/Navbar';
 
-// Importamos los NUEVOS botones flotantes (WhatsApp + Instagram)
-import FloatingButtons from './components/FloatingButtons';
-
 // Importamos las páginas REALES con el contenido del cliente
 import SobreNosotros from './components/SobreNosotros';
 import Servicios from './components/Servicios';
@@ -97,7 +94,7 @@ const Contacto = () => (
                        color: '#4A7C59', 
                        fontWeight: 'bold', 
                        textDecoration: 'none',
-                       display: 'inline-flex',
+                       display: 'inline-flex', // CORREGIDO: Usamos solo inline-flex para centrar contenido
                        alignItems: 'center', 
                        justifyContent: 'center', 
                        gap: '10px',
@@ -118,10 +115,6 @@ function App() {
   return (
     <Router>
       <Navbar />
-      
-      {/* AQUÍ ESTÁN LOS BOTONES FLOTANTES (Instagram + WhatsApp) */}
-      <FloatingButtons />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/nosotros" element={<SobreNosotros />} />
