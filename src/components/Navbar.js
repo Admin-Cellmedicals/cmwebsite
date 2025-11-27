@@ -18,7 +18,7 @@ function Navbar() {
     logo: {
       fontSize: '1.8rem',
       fontWeight: '700',
-      color: '#4A7C59', // Usamos el verde del branding
+      color: '#4A7C59', 
       textDecoration: 'none',
       fontFamily: '"Playfair Display", serif'
     },
@@ -30,12 +30,11 @@ function Navbar() {
     link: {
       textDecoration: 'none',
       color: '#2C3E50',
-      fontSize: '1rem',
       fontWeight: '500',
       transition: 'color 0.3s',
       textTransform: 'uppercase',
       letterSpacing: '1px',
-      fontSize: '0.9rem'
+      fontSize: '0.9rem' // Dejamos solo este, borramos el repetido
     }
   };
 
