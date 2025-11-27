@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../App.css'; 
+import '../App.css';
+// Importamos el logo (Asegúrate de haber limpiado el archivo SVG)
+import logo from '../assets/logo.svg';
 
 function Navbar() {
   const styles = {
@@ -8,24 +10,36 @@ function Navbar() {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      padding: '1.5rem 2rem',
+      padding: '1rem 2rem', 
       backgroundColor: '#fff',
       boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
       position: 'sticky',
       top: 0,
       zIndex: 1000
     },
-    logo: {
+    brandContainer: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '12px',
+      textDecoration: 'none'
+    },
+    logoImg: {
+      height: '50px', 
+      width: 'auto'
+    },
+    brandText: {
       fontSize: '1.8rem',
       fontWeight: '700',
-      color: '#4A7C59', 
-      textDecoration: 'none',
-      fontFamily: '"Playfair Display", serif'
+      color: '#4A7C59',
+      fontFamily: '"Playfair Display", serif',
+      lineHeight: 1
     },
     menu: {
       display: 'flex',
       gap: '30px',
-      listStyle: 'none'
+      listStyle: 'none',
+      margin: 0,
+      padding: 0
     },
     link: {
       textDecoration: 'none',
@@ -34,13 +48,17 @@ function Navbar() {
       transition: 'color 0.3s',
       textTransform: 'uppercase',
       letterSpacing: '1px',
-      fontSize: '0.9rem' // Dejamos solo este, borramos el repetido
+      fontSize: '0.9rem'
     }
   };
 
   return (
     <nav style={styles.nav}>
-      <Link to="/" style={styles.logo}>CellMedicals</Link>
+      {/* Enlace al Home que contiene Logo + Texto */}
+      <Link to="/" style={styles.brandContainer}>
+        <img src={logo} alt="Logo CellMedicals" style={styles.logoImg} />
+        <span style={styles.brandText}>CellMedicals</span>
+      </Link>
 
       <ul style={styles.menu}>
         <li><Link to="/" style={styles.link}>Inicio</Link></li>

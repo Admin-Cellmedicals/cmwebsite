@@ -1,6 +1,13 @@
 import React from 'react';
 
 const Servicios = () => {
+  // Estilo para los iconos de las tarjetas
+  const iconStyle = {
+    fontSize: '3rem', // Tamaño grande
+    marginBottom: '15px',
+    display: 'block'
+  };
+
   return (
     <div className="page-container">
       <div style={{textAlign: 'center', maxWidth: '800px', margin: '0 auto 50px auto'}}>
@@ -15,52 +22,61 @@ const Servicios = () => {
 
       <div className="service-list">
         
-        <div className="card">
+        <div className="card" style={{textAlign: 'center'}}>
+          <span style={iconStyle}>👁️</span>
           <strong>Iridología</strong>
           <p>Analizamos el iris para identificar desequilibrios internos, deficiencias o sobrecargas orgánicas, orientando tratamientos personalizados.</p>
         </div>
 
-        <div className="card">
+        <div className="card" style={{textAlign: 'center'}}>
+          <span style={iconStyle}>🥗</span>
           <strong>Trofología</strong>
           <p>Enseñamos cómo combinar los alimentos de forma correcta para regenerar células, equilibrar el pH y potenciar la energía vital.</p>
         </div>
 
-        <div className="card">
+        <div className="card" style={{textAlign: 'center'}}>
+          <span style={iconStyle}>👂</span>
           <strong>Auriculoterapia</strong>
           <p>Estimulamos puntos reflejos en la oreja para equilibrar órganos, emociones y sistemas corporales, ayudando en el control del dolor, ansiedad y peso corporal.</p>
         </div>
 
-        <div className="card">
+        <div className="card" style={{textAlign: 'center'}}>
+          <span style={iconStyle}>💆‍♂️</span>
           <strong>Terapia quiropráctica</strong>
           <p>Corregimos desalineaciones vertebrales y bloqueos energéticos que afectan al sistema nervioso y al flujo vital.</p>
         </div>
 
-        <div className="card">
+        <div className="card" style={{textAlign: 'center'}}>
+          <span style={iconStyle}>☯️</span>
           <strong>Medicina China Tradicional</strong>
           <p>Aplicamos principios milenarios que incluyen:</p>
-          <ul className="bullet-list">
+          <ul className="bullet-list" style={{textAlign: 'left'}}>
             <li><strong>Acupuntura:</strong> para armonizar la energía vital o Qi a través de puntos específicos.</li>
             <li><strong>Moxibustión:</strong> mediante calor terapéutico que activa la circulación energética.</li>
             <li><strong>Digitopresión y Shiatsu:</strong> técnicas manuales que liberan tensiones y estimulan el flujo natural de energía.</li>
           </ul>
         </div>
 
-        <div className="card">
+        <div className="card" style={{textAlign: 'center'}}>
+          <span style={iconStyle}>🌿</span>
           <strong>Medicina Homeostática</strong>
           <p>Utilizamos terapias biológicas y naturales para ayudar al cuerpo a recuperar su equilibrio interno y funcional.</p>
         </div>
 
-        <div className="card">
+        <div className="card" style={{textAlign: 'center'}}>
+          <span style={iconStyle}>🏺</span>
           <strong>Terapia de Ventosas (Cupping)</strong>
           <p>Promovemos la desintoxicación y la circulación sanguínea mediante succión controlada.</p>
         </div>
 
-        <div className="card">
+        <div className="card" style={{textAlign: 'center'}}>
+          <span style={iconStyle}>🧲</span>
           <strong>Terapia con Imanes (Biomagnetismo)</strong>
           <p>Equilibramos los campos magnéticos del cuerpo para neutralizar desequilibrios y mejorar la salud celular.</p>
         </div>
 
-        <div className="card">
+        <div className="card" style={{textAlign: 'center'}}>
+          <span style={iconStyle}>✨</span>
           <strong>Terapias energéticas y vibracionales</strong>
           <p>Aplicamos frecuencias naturales, aromaterapia y esencias florales que armonizan cuerpo, mente y espíritu.</p>
         </div>

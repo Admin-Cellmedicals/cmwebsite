@@ -1,6 +1,13 @@
 import React from 'react';
 
 const Cursos = () => {
+  // Estilo para los iconos (igual que en Servicios para mantener consistencia)
+  const iconStyle = {
+    fontSize: '3rem',
+    marginBottom: '15px',
+    display: 'block'
+  };
+
   return (
     <div className="page-container">
       <div style={{textAlign: 'center', maxWidth: '800px', margin: '0 auto 50px auto'}}>
@@ -17,46 +24,58 @@ const Cursos = () => {
 
       <div className="course-list">
         
-        <div className="card">
+        <div className="card" style={{textAlign: 'center'}}>
+          <span style={iconStyle}>👁️‍🗨️</span>
           <strong>Iridología</strong>
           <p>Aprende a leer el iris como un mapa biológico que revela el estado de los órganos, emociones y energía vital del cuerpo.</p>
         </div>
 
-        <div className="card">
+        <div className="card" style={{textAlign: 'center'}}>
+          <span style={iconStyle}>👂</span>
           <strong>Auriculoterapia</strong>
           <p>Domina el arte de equilibrar los sistemas del organismo a través de los puntos reflejos de la oreja, estimulando la autocuración.</p>
         </div>
 
-        <div className="card">
+        <div className="card" style={{textAlign: 'center'}}>
+          <span style={iconStyle}>🔥</span>
           <strong>Moxibustión</strong>
           <p>Conoce esta técnica milenaria de la medicina china basada en el calor terapéutico de la artemisa para fortalecer la energía vital (Qi).</p>
         </div>
 
-        <div className="card">
+        <div className="card" style={{textAlign: 'center'}}>
+          <span style={iconStyle}>🍏</span>
           <strong>Trofología</strong>
           <p>Estudia cómo los alimentos correctos pueden regenerar células, equilibrar el pH y mejorar la vitalidad.</p>
         </div>
 
-        <div className="card">
+        <div className="card" style={{textAlign: 'center'}}>
+          <span style={iconStyle}>🧲</span>
           <strong>Biomagnetismo</strong>
           <p>Utiliza campos magnéticos para restablecer el equilibrio bioenergético y favorecer la salud celular.</p>
         </div>
 
-        <div className="card">
+        <div className="card" style={{textAlign: 'center'}}>
+          <span style={iconStyle}>📡</span>
           <strong>Ondas escalares</strong>
           <p>Explora las terapias de frecuencia y vibración que armonizan los campos electromagnéticos del cuerpo, elevando la energía celular.</p>
         </div>
 
-        <div className="card">
+        <div className="card" style={{textAlign: 'center'}}>
+          <span style={iconStyle}>🌸</span>
           <strong>Flores de Bach</strong>
           <p>Descubre el poder terapéutico de las esencias florales para armonizar emociones, liberar bloqueos y restaurar la paz interior.</p>
         </div>
 
       </div>
 
-      <div style={{backgroundColor: '#4A7C59', color: 'white', padding: '30px', borderRadius: '10px', marginTop: '50px', textAlign: 'center'}}>
-        <p style={{color: 'white', marginBottom: '10px'}}>Nuestros cursos incluyen materiales digitales, certificación, prácticas guiadas y acompañamiento personalizado.</p>
-        <p style={{color: 'white', fontStyle: 'italic', fontWeight: 'bold'}}>En CellMedicals, cada formación es una oportunidad para sanar, aprender y despertar la energía interior, creando terapeutas conscientes y preparados para ayudar a otros.</p>
+      <div style={{backgroundColor: '#4A7C59', color: 'white', padding: '40px', borderRadius: '15px', marginTop: '60px', textAlign: 'center', boxShadow: '0 10px 30px rgba(74, 124, 89, 0.2)'}}>
+        <span style={{fontSize: '3rem', display: 'block', marginBottom: '10px'}}>🎓</span>
+        <p style={{color: 'white', marginBottom: '15px', fontSize: '1.2rem'}}>
+            Nuestros cursos incluyen materiales digitales, certificación, prácticas guiadas y acompañamiento personalizado.
+        </p>
+        <p style={{color: '#E9F1EA', fontStyle: 'italic', fontWeight: 'bold'}}>
+            En CellMedicals, cada formación es una oportunidad para sanar, aprender y despertar la energía interior, creando terapeutas conscientes y preparados para ayudar a otros.
+        </p>
       </div>
     </div>
   );
