@@ -8,28 +8,46 @@ const Cursos = () => {
     display: 'block'
   };
 
-  // --- CAMBIO: Usamos Flexbox en lugar de Grid ---
-  // Flexbox con 'justify-content: center' permite que la última fila
-  // (los 3 cursos restantes) queden centrados en lugar de alineados a la izquierda.
+  // Estilo del contenedor principal
   const containerStyle = {
     display: 'flex',
-    flexWrap: 'wrap', // Permite que los elementos bajen a la siguiente línea
-    justifyContent: 'center', // ESTO es lo que centra la última fila
+    flexWrap: 'wrap',
+    justifyContent: 'center', // Centra los elementos (efecto pirámide)
     gap: '20px',
     marginTop: '40px'
   };
 
-  // --- NUEVO: Estilo para cada tarjeta ---
-  // Calculamos el ancho para que quepan exactamente 4 (25%) restando el espacio del gap.
-  const cardStyle = {
-    textAlign: 'center',
-    // flex: basis width. 25% es 1/4 del ancho. Restamos 20px para considerar el gap.
-    flex: '0 0 calc(25% - 20px)', 
-    boxSizing: 'border-box'
-  };
-
   return (
     <div className="page-container">
+      
+      {/* AGREGAMOS ESTILOS CSS AQUÍ:
+         Esto permite cambiar el comportamiento según el tamaño de la pantalla.
+         - En móvil: width 100% (1 columna)
+         - En PC: width 25% (4 columnas)
+      */}
+      <style>{`
+        .curso-card {
+          text-align: center;
+          background-color: white; /* Fondo blanco como en Servicios */
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra suave */
+          border-left: 5px solid #4A7C59; /* Borde verde lateral decorativo */
+          
+          /* POR DEFECTO (Móviles): Ocupa el 100% del ancho */
+          flex: 0 0 100%;
+          box-sizing: border-box;
+        }
+
+        /* PARA TABLETS Y PC (Pantallas mayores a 768px): */
+        @media (min-width: 900px) {
+          .curso-card {
+            /* Vuelve a 4 columnas restando el espacio del gap */
+            flex: 0 0 calc(25% - 20px); 
+          }
+        }
+      `}</style>
+
       <div style={{textAlign: 'center', maxWidth: '800px', margin: '0 auto 50px auto'}}>
         <h2>Cursos y Formación</h2>
         <p>
@@ -45,43 +63,45 @@ const Cursos = () => {
       {/* Contenedor Flex */}
       <div className="course-list" style={containerStyle}>
         
-        <div className="card" style={cardStyle}>
+        {/* Usamos className="curso-card" en lugar de style en línea para el tamaño */}
+        
+        <div className="curso-card">
           <span style={iconStyle}>👁️‍🗨️</span>
           <strong>Iridología</strong>
           <p>Aprende a leer el iris como un mapa biológico que revela el estado de los órganos, emociones y energía vital del cuerpo.</p>
         </div>
 
-        <div className="card" style={cardStyle}>
+        <div className="curso-card">
           <span style={iconStyle}>👂</span>
           <strong>Auriculoterapia</strong>
           <p>Domina el arte de equilibrar los sistemas del organismo a través de los puntos reflejos de la oreja, estimulando la autocuración.</p>
         </div>
 
-        <div className="card" style={cardStyle}>
+        <div className="curso-card">
           <span style={iconStyle}>🔥</span>
           <strong>Moxibustión</strong>
           <p>Conoce esta técnica milenaria de la medicina china basada en el calor terapéutico de la artemisa para fortalecer la energía vital (Qi).</p>
         </div>
 
-        <div className="card" style={cardStyle}>
+        <div className="curso-card">
           <span style={iconStyle}>🍏</span>
           <strong>Trofología</strong>
           <p>Estudia cómo los alimentos correctos pueden regenerar células, equilibrar el pH y mejorar la vitalidad.</p>
         </div>
 
-        <div className="card" style={cardStyle}>
+        <div className="curso-card">
           <span style={iconStyle}>🧲</span>
           <strong>Biomagnetismo</strong>
           <p>Utiliza campos magnéticos para restablecer el equilibrio bioenergético y favorecer la salud celular.</p>
         </div>
 
-        <div className="card" style={cardStyle}>
+        <div className="curso-card">
           <span style={iconStyle}>📡</span>
           <strong>Ondas escalares</strong>
           <p>Explora las terapias de frecuencia y vibración que armonizan los campos electromagnéticos del cuerpo, elevando la energía celular.</p>
         </div>
 
-        <div className="card" style={cardStyle}>
+        <div className="curso-card">
           <span style={iconStyle}>🌸</span>
           <strong>Flores de Bach</strong>
           <p>Descubre el poder terapéutico de las esencias florales para armonizar emociones, liberar bloqueos y restaurar la paz interior.</p>
