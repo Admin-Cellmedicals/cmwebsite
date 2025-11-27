@@ -8,13 +8,24 @@ const Cursos = () => {
     display: 'block'
   };
 
-  // --- NUEVO ESTILO: Configuración de la rejilla (Grid) ---
-  // Esto fuerza que se vean 4 tarjetas por fila
-  const gridContainerStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(4, 1fr)', // Aquí definimos las 4 columnas
+  // --- CAMBIO: Usamos Flexbox en lugar de Grid ---
+  // Flexbox con 'justify-content: center' permite que la última fila
+  // (los 3 cursos restantes) queden centrados en lugar de alineados a la izquierda.
+  const containerStyle = {
+    display: 'flex',
+    flexWrap: 'wrap', // Permite que los elementos bajen a la siguiente línea
+    justifyContent: 'center', // ESTO es lo que centra la última fila
     gap: '20px',
     marginTop: '40px'
+  };
+
+  // --- NUEVO: Estilo para cada tarjeta ---
+  // Calculamos el ancho para que quepan exactamente 4 (25%) restando el espacio del gap.
+  const cardStyle = {
+    textAlign: 'center',
+    // flex: basis width. 25% es 1/4 del ancho. Restamos 20px para considerar el gap.
+    flex: '0 0 calc(25% - 20px)', 
+    boxSizing: 'border-box'
   };
 
   return (
@@ -31,46 +42,46 @@ const Cursos = () => {
         <h3>Ofrecemos formación en las siguientes áreas:</h3>
       </div>
 
-      {/* Aplicamos el estilo de rejilla de 4 columnas aquí */}
-      <div className="course-list" style={gridContainerStyle}>
+      {/* Contenedor Flex */}
+      <div className="course-list" style={containerStyle}>
         
-        <div className="card" style={{textAlign: 'center'}}>
+        <div className="card" style={cardStyle}>
           <span style={iconStyle}>👁️‍🗨️</span>
           <strong>Iridología</strong>
           <p>Aprende a leer el iris como un mapa biológico que revela el estado de los órganos, emociones y energía vital del cuerpo.</p>
         </div>
 
-        <div className="card" style={{textAlign: 'center'}}>
+        <div className="card" style={cardStyle}>
           <span style={iconStyle}>👂</span>
           <strong>Auriculoterapia</strong>
           <p>Domina el arte de equilibrar los sistemas del organismo a través de los puntos reflejos de la oreja, estimulando la autocuración.</p>
         </div>
 
-        <div className="card" style={{textAlign: 'center'}}>
+        <div className="card" style={cardStyle}>
           <span style={iconStyle}>🔥</span>
           <strong>Moxibustión</strong>
           <p>Conoce esta técnica milenaria de la medicina china basada en el calor terapéutico de la artemisa para fortalecer la energía vital (Qi).</p>
         </div>
 
-        <div className="card" style={{textAlign: 'center'}}>
+        <div className="card" style={cardStyle}>
           <span style={iconStyle}>🍏</span>
           <strong>Trofología</strong>
           <p>Estudia cómo los alimentos correctos pueden regenerar células, equilibrar el pH y mejorar la vitalidad.</p>
         </div>
 
-        <div className="card" style={{textAlign: 'center'}}>
+        <div className="card" style={cardStyle}>
           <span style={iconStyle}>🧲</span>
           <strong>Biomagnetismo</strong>
           <p>Utiliza campos magnéticos para restablecer el equilibrio bioenergético y favorecer la salud celular.</p>
         </div>
 
-        <div className="card" style={{textAlign: 'center'}}>
+        <div className="card" style={cardStyle}>
           <span style={iconStyle}>📡</span>
           <strong>Ondas escalares</strong>
           <p>Explora las terapias de frecuencia y vibración que armonizan los campos electromagnéticos del cuerpo, elevando la energía celular.</p>
         </div>
 
-        <div className="card" style={{textAlign: 'center'}}>
+        <div className="card" style={cardStyle}>
           <span style={iconStyle}>🌸</span>
           <strong>Flores de Bach</strong>
           <p>Descubre el poder terapéutico de las esencias florales para armonizar emociones, liberar bloqueos y restaurar la paz interior.</p>
