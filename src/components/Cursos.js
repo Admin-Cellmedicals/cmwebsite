@@ -1,11 +1,20 @@
 import React from 'react';
 
 const Cursos = () => {
-  // Estilo para los iconos (igual que en Servicios para mantener consistencia)
+  // Estilo para los iconos
   const iconStyle = {
     fontSize: '3rem',
     marginBottom: '15px',
     display: 'block'
+  };
+
+  // --- NUEVO ESTILO: Configuración de la rejilla (Grid) ---
+  // Esto fuerza que se vean 4 tarjetas por fila
+  const gridContainerStyle = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(4, 1fr)', // Aquí definimos las 4 columnas
+    gap: '20px',
+    marginTop: '40px'
   };
 
   return (
@@ -22,7 +31,8 @@ const Cursos = () => {
         <h3>Ofrecemos formación en las siguientes áreas:</h3>
       </div>
 
-      <div className="course-list">
+      {/* Aplicamos el estilo de rejilla de 4 columnas aquí */}
+      <div className="course-list" style={gridContainerStyle}>
         
         <div className="card" style={{textAlign: 'center'}}>
           <span style={iconStyle}>👁️‍🗨️</span>

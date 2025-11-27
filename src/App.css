@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap');
 
 :root {
-  --primary-color: #4A7C59; /* Verde Bosque - Confianza y Salud */
-  --secondary-color: #E9F1EA; /* Verde muy pálido - Fondo suave */
-  --accent-color: #D4A373; /* Tono Madera/Tierra - Calidez */
-  --text-dark: #2C3E50; /* Gris oscuro - Lectura profesional */
-  --text-light: #586776; /* Gris medio - Para párrafos */
+  --primary-color: #4A7C59; /* Verde Bosque */
+  --secondary-color: #E9F1EA; /* Verde muy pálido */
+  --accent-color: #D4A373; /* Tono Madera/Tierra */
+  --text-dark: #2C3E50; /* Gris oscuro */
+  --text-light: #586776; /* Gris medio */
   --white: #ffffff;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
@@ -19,13 +19,19 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  background-color: #FAFAF5; /* Un blanco roto, más natural que el blanco puro */
+  background-color: #FAFAF5;
   color: var(--text-dark);
   line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 h1, h2, h3 {
-  font-family: 'Playfair Display', serif; /* Toque elegante para títulos */
+  font-family: 'Playfair Display', serif;
   color: var(--primary-color);
   margin-bottom: 1rem;
 }
@@ -48,7 +54,7 @@ p {
   min-height: 80vh;
 }
 
-/* Estilos para Listas de Servicios y Cursos */
+/* Listas de Servicios y Cursos */
 .service-list, .course-list {
   list-style: none;
   padding: 0;
@@ -78,7 +84,6 @@ p {
   font-family: 'Playfair Display', serif;
 }
 
-/* Listas internas (bullets) */
 ul.bullet-list {
   list-style-type: disc;
   padding-left: 20px;
@@ -106,4 +111,104 @@ li {
 
 .btn-main:hover {
   background-color: #3a6345;
+}
+
+/* =========================================
+   🧭 ESTILOS DEL NAVBAR (NUEVO)
+   Definimos las clases aquí para poder controlarlas
+   ========================================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--white);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.navbar-logo-img {
+  height: 50px; 
+  width: auto;
+}
+
+.navbar-brand-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-family: 'Playfair Display', serif;
+  line-height: 1;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   📱 MEDIA QUERIES (RESPONSIVE)
+   Reglas especiales para celulares
+   ========================================= */
+@media (max-width: 768px) {
+  
+  /* --- NAVBAR EN MÓVIL --- */
+  .navbar {
+    flex-direction: column; /* IMPORTANTE: Apila el logo arriba y menú abajo */
+    padding: 1rem;
+  }
+  
+  .navbar-menu {
+    margin-top: 15px;
+    flex-wrap: wrap; /* Permite que los enlaces bajen si no caben */
+    justify-content: center; /* Centra los enlaces */
+    gap: 15px; /* Reduce el espacio entre enlaces */
+  }
+
+  .navbar-link {
+    font-size: 0.8rem; /* Letra un poco más pequeña */
+  }
+
+  .navbar-brand-text {
+    font-size: 1.5rem; /* Nombre más pequeño en celular */
+  }
+
+  /* --- AJUSTES GENERALES MÓVIL --- */
+  h1 { font-size: 2rem; } 
+  h2 { font-size: 1.75rem; }
+  
+  .page-container {
+    padding: 30px 15px;
+  }
+
+  /* Tarjetas en una sola columna para leer mejor */
+  .service-list, .course-list {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+
+  .card {
+    padding: 20px;
+  }
 }
